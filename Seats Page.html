@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movie Page</title>
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body>
+	<div class = "navBar">NavBar</div>
+	<div class = "movieInfo">
+		<img class="movieInfoPoster" src="pictures/movie1.jpg">
+		<div class="movieDetails">
+			<div class="movieInfoName">The Foreigner</div>
+			<div class="movieInfoActor">Jacky Chen</div>
+			<div class="movieInfoLength">Length</div>
+			<div class="movieInfoSummary">A humble businessman with a buried past seeks justice when his daughter is killed in an act of terrorism. A cat-and-mouse conflict ensues with a government official, whose past may hold clues to the killers' identities.</div>
+
+		</div>
+	</div>
+
+	<div class="switch">
+			<label>Cinema:
+				<select class="switchSelect">
+					<option>Cinema 1</option>
+					<option>Cinema 2</option>
+					<option>Cinema 3</option>
+					<option>Cinema 4</option>
+					<option>Cinema 5</option>
+					<option>Cinema 6</option>
+				</select>
+			</label><label>Movie:
+				<select class="switchSelect">
+					<option>The Foreigner</option>
+				</select>
+			</label><label>Time:
+				<select class="switchSelect">
+					<option>14:00</option>
+				</select>
+			</label>
+			
+			<button class="search">Switch</button>
+	</div>
+
+	<div class="seats">
+		<div class="screen">Screen</div>
+		<table id="emptyTable"></table>
+		<button id="confirm">Confirm</button>
+	</div>
+	<footer class="footer">
+		Footer
+	</footer>
+
+	<script type="text/javascript">
+		var seatsCondition = new Array();
+		seatsCondition = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+						  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+						  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+						  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+						  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+						  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+						  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]; 
+		var oDiv = document.getElementById('emptyTable');
+		for (var i = 0; i < 7;i++){
+			var row = document.createElement('tr');
+			
+			for (var j = 0; j < 15; j++){
+				var td = document.createElement('td');
+				// td.setAttribute("id",i+"-"+j);
+				var image = document.createElement('img');
+				image.setAttribute("id",i+"-"+j);
+				image.setAttribute("class","seatButton");
+				image.setAttribute("src","pictures/seat.png")
+				td.appendChild(image);
+				row.appendChild(td);
+			}
+			oDiv.appendChild(row);
+		}
+		for (var i = 0; i <7; i++){
+			for (var j = 0; j<15; j++){
+				var image = document.getElementById(i+"-"+j);
+					image.addEventListener("click",function(){
+					if (this.getAttribute("src") == "pictures/seat.png"){
+						this.setAttribute("src","pictures/seatSelected.png");
+
+					}else{
+						this.setAttribute("src","pictures/seat.png");
+					}
+					
+				});
+					if (image.getAttribute("src") == "pictures/seat.png"){
+						seatsCondition[i][j] = 0;
+					}else{
+						seatsCondition[i][j] = 1;
+					}
+			}
+
+		}
+
+
+
+		document.getElementById("confirm").addEventListener("click",function(){
+			var number =0;
+			for (var i = 0; i <7; i++){
+				for (var j = 0; j<15; j++){
+					var image = document.getElementById(i+"-"+j);
+					if(image.getAttribute("src") == "pictures/seatSelected.png"){
+						number++;
+					}
+					if (image.getAttribute("src") == "ppictures/seat.png"){
+						seatsCondition[i][j] = 0;
+					}else{
+						seatsCondition[i][j] = 1;
+					}
+				}
+			}
+			alert("You have selected " + number + " seats.");
+		});
+
+
+		
+</script>
+
+	
+</body>
+</html>

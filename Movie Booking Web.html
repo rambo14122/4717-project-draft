@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movie Booking Web</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<!-- 不可以用bootstap的话抽出我们要的css作为本地文件-->
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+</head>
+<body>
+	<div class = "navBar">NavBar</div>
+	<div class = "nowShowing">
+		<!-- video slider will be added -->
+		<span class="nowShowingText">Now Showing</span>
+		<img class="previous" src="pictures/previous.png">
+		<img class="next" src="pictures/next.png">
+		<button type="button" class="btn btn-outline-danger">Buy Tickets Now!</button>
+		<video class="trailer" src="jl.flv" autoplay="autoplay"></video>
+		
+		<!-- now showing movie -->
+	</div>
+	<!-- <script>
+	var slideIndex = 1;
+	showDivs(slideIndex);
+
+	function plusDivs(n) {
+	  showDivs(slideIndex += n);
+	}
+
+	function showDivs(n) {
+	  var i;
+	  var x = document.getElementsByClassName("trailer");
+	  if (n > x.length) {slideIndex = 1}    
+	  if (n < 1) {slideIndex = x.length}
+	  for (i = 0; i < x.length; i++) {
+	     x[i].style.display = "none";  
+	  }
+	  x[slideIndex-1].style.display = "block";  
+	}
+	</script> -->
+
+
+	<div class = "quickBuy">
+		quickbuy<!-- quick buy bar -->
+	</div>
+
+
+	<div class= "movieList">
+		<div id="movie1" class="movie">
+			<div class="top">
+				<img class="poster" src="pictures/movie1.jpg">
+			</div>
+			<div class="bottom">
+				<div class="movieName">Name</div>
+				<div class="length">Length</div>
+				<div class="score">Score</div>
+				<button class="movie-action">Buy Tickets</button>
+			</div>
+		</div>
+		<div class="movie">
+			<div class="top">
+				<img class="poster" src="pictures/movie1.jpg">
+			</div>
+			<div class="bottom">
+				<div class="movieName">Name</div>
+				<div class="length">Length</div>
+				<div class="score">Score</div>
+				<button class="movie-action">Buy Tickets</button>
+			</div>
+		</div>
+		<div class="movie">
+			<div class="top">
+				<img class="poster" src="pictures/movie1.jpg">
+			</div>
+			<div class="bottom">
+				<div class="movieName">Name</div>
+				<div class="length">Length</div>
+				<div class="score">Score</div>
+				<button class="movie-action">Buy Tickets</button>
+			</div>
+		</div>
+		<div class="movie">
+			<div class="top">
+				<img class="poster" src="pictures/movie1.jpg">
+			</div>
+			<div class="bottom">
+				<div class="movieName">Name</div>
+				<div class="length">Length</div>
+				<div class="score">Score</div>
+				<button class="movie-action">Buy Tickets</button>
+			</div>
+		</div>
+	</div>
+
+
+	<footer class="footer">
+		Footer
+	</footer>
+	<script type="text/javascript">
+		var movie1 = document.getElementById("movie1");
+		movie1.addEventListener("click",function(){
+		window.location.href="Movie Page.html";
+		});
+</script>
+</body>
+</html>
