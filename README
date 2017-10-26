@@ -2,3 +2,138 @@
 顶端navbar可以鼠标放在上面的时候取消透明，下拉的时候取消透明，置顶
 还有下次我们讨论的时候注意一下tablet和mobile的适配
 。。。暂时想不起来了反正要改很多遍呢慢慢来
+-- phpMyAdmin SQL Dump
+-- version 4.7.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:8889
+-- Generation Time: Oct 26, 2017 at 10:15 AM
+-- Server version: 5.6.35
+-- PHP Version: 7.1.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `MovieWebDataBase`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `MovieInfo`
+--
+
+CREATE TABLE `MovieInfo` (
+  `movie_name` varchar(50) DEFAULT NULL,
+  `movie_description` varchar(200) DEFAULT NULL,
+  `movie_image` varchar(100) DEFAULT NULL,
+  `movie_length` varchar(50) DEFAULT NULL,
+  `movie_time` varchar(20) DEFAULT NULL,
+  `moive_rating` varchar(3) DEFAULT NULL,
+  `movie_id` varchar(50) DEFAULT NULL,
+  `movie_price` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `MovieInfo`
+--
+
+INSERT INTO `MovieInfo` (`movie_name`, `movie_description`, `movie_image`, `movie_length`, `movie_time`, `moive_rating`, `movie_id`, `movie_price`) VALUES
+('Kingsman', 'Testing description', '../image/kingsman.jpg', '120m', '20171026', '4.0', 'M2017102601', '9.0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `OrderHistory`
+--
+
+CREATE TABLE `OrderHistory` (
+  `user_id` varchar(50) DEFAULT NULL,
+  `order_time` varchar(50) DEFAULT NULL,
+  `order_details` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `SeatInfo`
+--
+
+CREATE TABLE `SeatInfo` (
+  `theater_id` varchar(10) DEFAULT NULL,
+  `seat_id` varchar(4) DEFAULT NULL,
+  `booking_status` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `SeatInfo`
+--
+
+INSERT INTO `SeatInfo` (`theater_id`, `seat_id`, `booking_status`) VALUES
+('C01H01', 'A01', '201710261000-201710261200,201710270600-201710270800'),
+('C01H01', 'A02', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `TheaterInfo`
+--
+
+CREATE TABLE `TheaterInfo` (
+  `cinema_name` varchar(50) DEFAULT NULL,
+  `cinema_id` varchar(5) DEFAULT NULL,
+  `theater_name` varchar(50) DEFAULT NULL,
+  `theater_id` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `TheaterInfo`
+--
+
+INSERT INTO `TheaterInfo` (`cinema_name`, `cinema_id`, `theater_name`, `theater_id`) VALUES
+('Jurong Point Golden Village', 'C01', 'Hall01', 'C01H01'),
+('Jurong Point Golden Village', 'C01', 'Hall02', 'C01H02');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `TimeInfo`
+--
+
+CREATE TABLE `TimeInfo` (
+  `movie_id` varchar(50) DEFAULT NULL,
+  `time_slot_info` varchar(50) DEFAULT NULL,
+  `theater_id` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `TimeInfo`
+--
+
+INSERT INTO `TimeInfo` (`movie_id`, `time_slot_info`, `theater_id`) VALUES
+('M2017102601', '201710261600-201710261800', 'C01H01'),
+('M2017102601', '201710261800-201710262000', 'C01H02');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `UserInfo`
+--
+
+CREATE TABLE `UserInfo` (
+  `user_name` varchar(50) DEFAULT NULL,
+  `user_password` varchar(50) DEFAULT NULL,
+  `user_email` varchar(50) DEFAULT NULL,
+  `user_id` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `UserInfo`
+--
+
+INSERT INTO `UserInfo` (`user_name`, `user_password`, `user_email`, `user_id`) VALUES
+('Li Wencheng', '12345', 'sm2liwencheng@gmail.com', 'Usm2liwencheng@gmail.com'),
+('Miao Yanxin', '67890', '123@qq.com', 'U123@qq.com');
+
+
