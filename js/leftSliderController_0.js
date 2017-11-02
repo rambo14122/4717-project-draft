@@ -4,7 +4,6 @@ var sliderHidden=document.getElementsByClassName('sliderHidden')[0];
 slider.addEventListener('click',showHidden,false);
 slider.addEventListener('mouseout',changeBackColor,false);
 slider.addEventListener('mouseover',changeColor,false);
-sliderHidden.addEventListener('mouseout',hideAgain,false);
 
 function changeBackColor()
 {

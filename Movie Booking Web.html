@@ -21,34 +21,36 @@
 				<label style="color:black;">Username: <input type="text" name="user_name"></label>
 				<br>
 				<br>
-				<label style="color:black;">Password: <input type="text" name="user_assword"></label>
+				<label style="color:black;">Password: <input type="password" name="user_password"></label>
 				<br>
 				<br>
-				<label style="color:black;">Confirm Password: <input type="text" name="user_assword"></label>
+				<label style="color:black;">Confirm Password: <input type="password" name="user_password"></label>
 				<br>
 				<br>
-				<button>Sign Up</button>
+				<button class="signupSubmit">Sign Up</button>
 
 			</form>
 		<a href="javascript:closeLogin();"></a>
 	</div>
 	<div id=loginWin style="display:none; position:absolute; left:50%; top:50%; width:600px; height:400px; margin-left:-300px; margin-top:-200px; border-radius: 10px;background-color: white; text-align:center box-shadow: 10px 10px 30px 10px rgba(153,153,153,0.5);z-index: 3;">
-		teset
+		
 			<br>
 			<div style="font-size: 20px;">Login</div>
 			<br>
 			<form action="" method="">
-
 				<label style="color:black;">Username: <input type="text" name="user_name"></label>
 				<br>
 				<br>
-				<label style="color:black;">Password: <input type="text" name="user_assword"></label>
+				<label style="color:black;">Password: <input type="password" name="user_password"></label>
 				<br>
 				<br>
 				<input type="submit" name="submit" value="Login">
 				&nbsp&nbsp&nbsp
+				<br>
+				<br>
 				<a href="">Forget password?</a>
 			</form>
+			<br>
 			<button onclick='document.getElementById("signupWin").style.display="block" ;document.getElementById("loginWin").style.display="none";'>Sign Up</button>
 	</div>
 
@@ -93,7 +95,6 @@
 
 	
 	<div class="sliderHidden">Quick Buy!<br>
-		<div class="hide" style="float: right">Hide</div>
 		<form method="GET">
 			<select class="quickBuySelection" id="cinemaQuickBuy">
 				<option>Cinema 1</option>
@@ -115,6 +116,7 @@
 			<br>
 			<input type="submit" name="" value="Go!">
 		</form>
+		<button class="hide" onclick="hideAgain()">Hide</button>
 
 	</div>
 	<div class="slider">Quick Buy!</div>
