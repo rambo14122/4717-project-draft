@@ -8,7 +8,7 @@ sliderHidden.addEventListener('mouseout',hideAgain,false);
 
 function changeBackColor()
 {
-    slider.style.backgroundColor='yellow';
+    slider.style.backgroundColor='red';
 }
 
 function changeColor()

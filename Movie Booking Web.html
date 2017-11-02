@@ -8,9 +8,56 @@
 	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+	<script src="js/navBarController.js"></script>
+	<script src="js/leftSliderController_0.js"></script>
 </head>
 <body>
-	<div class = "navBar">NavBar</div>
+	<div id=signupWin style="display:none; position:absolute; left:50%; top:50%; width:600px; height:400px; margin-left:-300px; margin-top:-200px; border-radius: 10px;background-color: white; text-align:center box-shadow: 10px 10px 30px 10px rgba(153,153,153,0.5);z-index: 4;">
+			<br>
+			<div style="font-size: 20px;">Sign Up</div>
+			<br>
+			<form action="" method="POST">
+
+				<label style="color:black;">Username: <input type="text" name="user_name"></label>
+				<br>
+				<br>
+				<label style="color:black;">Password: <input type="text" name="user_assword"></label>
+				<br>
+				<br>
+				<label style="color:black;">Confirm Password: <input type="text" name="user_assword"></label>
+				<br>
+				<br>
+				<button>Sign Up</button>
+
+			</form>
+		<a href="javascript:closeLogin();"></a>
+	</div>
+	<div id=loginWin style="display:none; position:absolute; left:50%; top:50%; width:600px; height:400px; margin-left:-300px; margin-top:-200px; border-radius: 10px;background-color: white; text-align:center box-shadow: 10px 10px 30px 10px rgba(153,153,153,0.5);z-index: 3;">
+		teset
+			<br>
+			<div style="font-size: 20px;">Login</div>
+			<br>
+			<form action="" method="">
+
+				<label style="color:black;">Username: <input type="text" name="user_name"></label>
+				<br>
+				<br>
+				<label style="color:black;">Password: <input type="text" name="user_assword"></label>
+				<br>
+				<br>
+				<input type="submit" name="submit" value="Login">
+				&nbsp&nbsp&nbsp
+				<a href="">Forget password?</a>
+			</form>
+			<button onclick='document.getElementById("signupWin").style.display="block" ;document.getElementById("loginWin").style.display="none";'>Sign Up</button>
+	</div>
+
+	<div id="bodyPage">
+		<div class = "navBar">
+		<div style="float: left;width: 20%;background-color: #E53935;height: 100%;font-size: 20px;"><img class="logo" src="pictures/logo.png">MovieWeb</div>
+		<div style="float: left;width: 60%;background-color: #E53935;height: 100%; padding-top: 10px">Header</div>
+		<div class="login" style="float: left;width: 20%;background-color: #E53935;height: 100%; padding-top: 20px; font-size: 20px;"><b onclick='document.getElementById("bodyPage").style.opacity=0.2;document.getElementById("loginWin").style.display="block"'>Login</b></div>
+	</div>
 	<div class = "nowShowing">
 		<!-- video slider will be added -->
 		<span class="nowShowingText">Now Showing</span>
@@ -21,6 +68,8 @@
 		
 		<!-- now showing movie -->
 	</div>
+	<div class="quickBuy"></div>
+
 	<!-- <script>
 	var slideIndex = 1;
 	showDivs(slideIndex);
@@ -42,10 +91,33 @@
 	</script> -->
 
 
-	<div class = "quickBuy">
-		quickbuy<!-- quick buy bar -->
-	</div>
+	
+	<div class="sliderHidden">Quick Buy!<br>
+		<div class="hide" style="float: right">Hide</div>
+		<form method="GET">
+			<select class="quickBuySelection" id="cinemaQuickBuy">
+				<option>Cinema 1</option>
+				<option>Cinema 2</option>
+				<option>Cinema 3</option>
+			</select>
+			<br>
+			<select class="quickBuySelection" id="movieQuickBuy">
+				<option>Movie 1</option>
+				<option>Movie 2</option>
+				<option>Movie 3</option>
+			</select>
+			<br>
+			<select class="quickBuySelection" id="timeQuickBuy">
+				<option>Time 1</option>
+				<option>Time 2</option>
+				<option>Time 3</option>
+			</select>
+			<br>
+			<input type="submit" name="" value="Go!">
+		</form>
 
+	</div>
+	<div class="slider">Quick Buy!</div>
 
 	<div class= "movieList">
 		<div id="movie1" class="movie">
@@ -98,11 +170,15 @@
 	<footer class="footer">
 		Footer
 	</footer>
+	</div>
+		
 	<script type="text/javascript">
 		var movie1 = document.getElementById("movie1");
 		movie1.addEventListener("click",function(){
 		window.location.href="Movie Page.html";
 		});
 </script>
+<!-- <script src="js/navBarController.js"></script> -->
+<script src="js/leftSliderController_0.js"></script>
 </body>
 </html>

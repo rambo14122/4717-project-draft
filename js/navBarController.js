@@ -3,7 +3,7 @@ var scrollFinishedTimer=-1;
 var nav = document.getElementsByClassName('navBar')[0];
 var increaseOpacityTimer=-1;
 var decreaseOpacityTimer=-1;
-var opacity=0.2;
+var opacity=0.6;
 
 nav.addEventListener('mouseover',increaseOpacity,false);
 nav.addEventListener('mouseout',decreaseOpacity,false);
